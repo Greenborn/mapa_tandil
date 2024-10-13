@@ -7,7 +7,7 @@ CREATE TABLE `reclamos`
     `ipv6` VARCHAR(255) NOT NULL, 
     `ts` DATETIME NOT NULL, 
     `user_agent` VARCHAR(255) NOT NULL,
-    `posicion` VARCHAR(255) NOT NULL
+    `posicion` VARCHAR(255) NOT NULL,
 PRIMARY KEY (`id`)) ENGINE = InnoDB; 
 
 CREATE TABLE `reportes` 

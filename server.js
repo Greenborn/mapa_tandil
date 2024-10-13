@@ -17,6 +17,7 @@ let corsOptions = {
 app.use(cors(corsOptions))
 
 app.use(bodyParser.json({ limit: '10mb' }));
+app.use("/", express.static('user_data'))
 
 app.get('/reclamos', async (req, res) => {
     console.log('/reclamos')//, req.body);
