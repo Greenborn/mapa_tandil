@@ -1,8 +1,9 @@
-const express = require('express');
-const dotenv = require('dotenv');
+const express    = require('express');
+const dotenv     = require('dotenv');
 const bodyParser = require("body-parser")
-const fs = require("fs")
-const uuid = require("uuid")
+const rateLimit  = require('./rateLimit')
+const fs         = require("fs")
+const uuid       = require("uuid")
 dotenv.config();
 
 const app = express();
@@ -25,7 +26,7 @@ app.get('/reclamos', async (req, res) => {
     return res.status(200).send({ "stat": true, "data": data });
 });
 
-app.post('/reclamo', async (req, res) => {
+app.post('/reclamo', rateLimit, async (req, res) => {
     console.log('/reclamo')//, req.body);
     try {
         const TS_REQ = new Date()
