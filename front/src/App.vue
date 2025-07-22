@@ -33,6 +33,21 @@ async function click_menu(enlace) {
 </script>
 
 <style lang="scss">
+:root {
+  --color-primario: #1976D2;
+  --color-secundario: #43A047;
+  --color-fondo: #F5F7FA;
+  --color-superficie: #FFFFFF;
+  --color-texto-principal: #212121;
+  --color-texto-secundario: #757575;
+  --color-acento: #FF9800;
+  --color-error: #D32F2F;
+}
+body, .container-fluid {
+  background: var(--color-fondo);
+  color: var(--color-texto-principal);
+  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+}
 .cont-modal{
   position: absolute;
   top: 0px;

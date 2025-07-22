@@ -43,6 +43,31 @@ const emit  = defineEmits(['btn_click'])
     left: 0;
     width: 100vw;
     padding: .75rem;
-    background: rgba(255, 255, 255, .95);
+    background: var(--color-primario);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.btn-group .btn {
+    color: var(--color-primario);
+    background: var(--color-superficie);
+    border: 1.5px solid var(--color-primario);
+    margin: 0 0.2rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-group .btn.active, .btn-group .btn:focus, .btn-group .btn:hover {
+    background: var(--color-primario);
+    color: var(--color-superficie);
+    border-color: var(--color-primario);
+}
+.btn-group .btn-success, .btn-group .btn-outline-success {
+    border-color: var(--color-secundario);
+    color: var(--color-secundario);
+}
+.btn-group .btn-success.active, .btn-group .btn-outline-success.active,
+.btn-group .btn-success:focus, .btn-group .btn-outline-success:focus,
+.btn-group .btn-success:hover, .btn-group .btn-outline-success:hover {
+    background: var(--color-secundario);
+    color: var(--color-superficie);
+    border-color: var(--color-secundario);
 }
 </style>

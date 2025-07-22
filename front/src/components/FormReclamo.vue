@@ -100,10 +100,37 @@ async function enviar() {
 
 <style lang="scss" scoped>
 .cont-modal {
-    background: rgba(255, 255, 255, .4);
+    background: rgba(245, 247, 250, 0.7);
 }
 
 .contenido {
-    background: rgba(255, 255, 255, .8);
+    background: var(--color-superficie);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+}
+.btn-group .btn {
+    color: var(--color-primario);
+    background: var(--color-superficie);
+    border: 1.5px solid var(--color-primario);
+    margin: 0 0.2rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-group .btn.active, .btn-group .btn:focus, .btn-group .btn:hover {
+    background: var(--color-primario);
+    color: var(--color-superficie);
+    border-color: var(--color-primario);
+}
+.btn-group .btn-outline-secondary {
+    border-color: var(--color-acento);
+    color: var(--color-acento);
+}
+.btn-group .btn-outline-secondary.active,
+.btn-group .btn-outline-secondary:focus,
+.btn-group .btn-outline-secondary:hover {
+    background: var(--color-acento);
+    color: var(--color-superficie);
+    border-color: var(--color-acento);
 }
 </style>
