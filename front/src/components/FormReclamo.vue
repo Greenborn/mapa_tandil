@@ -105,6 +105,7 @@ async function enviar() {
 <style lang="scss" scoped>
 .cont-modal {
     background: rgba(245, 247, 250, 0.7);
+    margin-top: 1.5rem;
 }
 
 .contenido {
