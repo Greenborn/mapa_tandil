@@ -36,8 +36,9 @@
                                     @click="emit('navigate', { id: 'MAP' })">
                                     <i class="bi bi-x-circle me-2"></i>Cancelar
                                 </button>
-                                <button type="button" class="btn btn-primary btn-lg px-4 ms-2" @click="enviar">
-                                    <i class="bi bi-send me-2"></i>Enviar
+                                <button type="button" class="btn btn-primary btn-lg px-4 ms-2" @click="enviar" :disabled="loading">
+                                    <span v-if="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                    <i v-else class="bi bi-send me-2"></i>Enviar
                                 </button>
                             </div>
                         </div>
@@ -72,7 +73,10 @@ const config_img = ref({
     max_height: 768
 })
 
+const loading = ref(false)
+
 async function enviar() {
+    if (loading.value) return;
     if (!model.value.titulo || model.value.titulo == '')
         return alert("El Título no puede estar vacío.")
 
@@ -87,7 +91,9 @@ async function enviar() {
 
     model.value['posicion'] = props.context?.posicion
 
+    loading.value = true
     let res_ = await new_reclamo(model.value)
+    loading.value = false
     if (res_.stat) {
         //await update_reclamos()
         alert("Reclamo subido correctamente.")
