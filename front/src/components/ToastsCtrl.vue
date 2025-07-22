@@ -57,5 +57,73 @@ function dissmiss(){
     .cont-toasts{
         position: fixed;
         z-index: var(--zindex-toast);
+        top: 1.5rem;
+        right: 1.5rem;
+        min-width: 320px;
+        max-width: 90vw;
+        pointer-events: none;
+    }
+    .toast {
+        background: var(--color-superficie, #fff);
+        color: var(--color-texto-principal, #212121);
+        border-radius: 1rem;
+        box-shadow: 0 4px 24px rgba(25, 118, 210, 0.13), 0 1.5px 4px rgba(25, 118, 210, 0.08);
+        border: none;
+        padding: 0.7rem 1.2rem;
+        margin-bottom: 1rem;
+        pointer-events: all;
+        opacity: 1;
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .toast[style*="display: none"] {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    .toast-header {
+        background: transparent;
+        border-bottom: none;
+        font-weight: 600;
+        color: var(--color-primario, #1976D2);
+        border-radius: 1rem 1rem 0 0;
+    }
+    .toast-body {
+        font-size: 1.05rem;
+        color: var(--color-texto-principal, #212121);
+    }
+    .btn-close {
+        filter: brightness(0.7);
+        transition: filter 0.2s;
+    }
+    .btn-close:hover {
+        filter: brightness(1);
+    }
+    .btn {
+        border-radius: 2em;
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0 0.2rem;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary {
+        background: var(--color-primario, #1976D2);
+        border-color: var(--color-primario, #1976D2);
+    }
+    .btn-primary:hover, .btn-primary:focus {
+        background: var(--color-acento, #FF9800);
+        border-color: var(--color-acento, #FF9800);
+        color: #fff;
+    }
+    .btn-secondary {
+        background: var(--color-superficie, #fff);
+        color: var(--color-primario, #1976D2);
+        border-color: var(--color-primario, #1976D2);
+    }
+    .btn-secondary:hover, .btn-secondary:focus {
+        background: var(--color-primario, #1976D2);
+        color: #fff;
     }
 </style>
