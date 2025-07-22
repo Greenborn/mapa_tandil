@@ -32,9 +32,14 @@
                     <div class="row justify-content-center border-top">
                         <div class="col-auto p-2">
                             <div class="btn-group btn-group-sm" role="group">
-                                <button type="button" class="btn btn-outline-secondary"
-                                    @click="emit('navigate', { id: 'MAP' })">Cancelar</button>
-                                <button type="button" class="btn btn-outline-primary" @click="enviar">Enviar</button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg px-4"
+                                    @click="emit('navigate', { id: 'MAP' })">
+                                    <i class="bi bi-x-circle me-2"></i>Cancelar
+                                </button>
+                                <button type="button" class="btn btn-primary btn-lg px-4 ms-2" @click="enviar" :disabled="loading">
+                                    <span v-if="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                    <i v-else class="bi bi-send me-2"></i>Enviar
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -68,7 +73,10 @@ const config_img = ref({
     max_height: 768
 })
 
+const loading = ref(false)
+
 async function enviar() {
+    if (loading.value) return;
     if (!model.value.titulo || model.value.titulo == '')
         return alert("El Título no puede estar vacío.")
 
@@ -83,7 +91,9 @@ async function enviar() {
 
     model.value['posicion'] = props.context?.posicion
 
+    loading.value = true
     let res_ = await new_reclamo(model.value)
+    loading.value = false
     if (res_.stat) {
         //await update_reclamos()
         alert("Reclamo subido correctamente.")
@@ -100,10 +110,42 @@ async function enviar() {
 
 <style lang="scss" scoped>
 .cont-modal {
-    background: rgba(255, 255, 255, .4);
+    background: rgba(245, 247, 250, 0.7);
+    margin-top: 1.5rem;
 }
 
 .contenido {
-    background: rgba(255, 255, 255, .8);
+    background: var(--color-superficie);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+}
+.btn-group .btn {
+    color: var(--color-primario);
+    background: var(--color-superficie);
+    border: 1.5px solid var(--color-primario);
+    margin: 0 0.4rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.6em 1.4em;
+    border-radius: 2em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
+}
+.btn-group .btn.active, .btn-group .btn:focus, .btn-group .btn:hover {
+    background: var(--color-primario);
+    color: var(--color-superficie);
+    border-color: var(--color-primario);
+}
+.btn-group .btn-outline-secondary {
+    border-color: var(--color-acento);
+    color: var(--color-acento);
+}
+.btn-group .btn-outline-secondary.active,
+.btn-group .btn-outline-secondary:focus,
+.btn-group .btn-outline-secondary:hover {
+    background: var(--color-acento);
+    color: var(--color-superficie);
+    border-color: var(--color-acento);
 }
 </style>

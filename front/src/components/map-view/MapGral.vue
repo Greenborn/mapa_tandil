@@ -1,7 +1,7 @@
 <template>
     <DetallePunto :info="selected" @close="select_none" />
     <div class="cont-modal">
-        <ol-map :loadTilesWhileAnimating="true" :loadTilesWhileInteracting="true" style="height: calc(100vh - 3.5rem)"
+        <ol-map :loadTilesWhileAnimating="true" :loadTilesWhileInteracting="true" :style="`height: calc(100vh - var(--menu-height) - var(--menu-margin-top, 0px))`"
             ref="map_ref">
             <ol-view ref="view" :center="center" :rotation="rotation" :zoom="zoom" :projection="projection" />
 
@@ -154,4 +154,9 @@ onMounted(async () => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+:root {
+  --menu-height: 4.5rem;
+  --menu-margin-top: 1.5rem;
+}
+</style>

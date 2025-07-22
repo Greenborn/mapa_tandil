@@ -33,15 +33,34 @@ async function click_menu(enlace) {
 </script>
 
 <style lang="scss">
+:root {
+  --color-primario: #1976D2;
+  --color-secundario: #43A047;
+  --color-fondo: #F5F7FA;
+  --color-superficie: #FFFFFF;
+  --color-texto-principal: #212121;
+  --color-texto-secundario: #757575;
+  --color-acento: #FF9800;
+  --color-error: #D32F2F;
+  --zindex-menu: 1200;
+  --zindex-modal: 4000;
+  --zindex-toast: 5000;
+  --menu-height: 4.5rem;
+}
+body, .container-fluid {
+  background: var(--color-fondo);
+  color: var(--color-texto-principal);
+  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+}
 .cont-modal{
   position: absolute;
-  top: 0px;
-  z-index: 1000;
+  top: var(--menu-height);
+  z-index: var(--zindex-modal);
   left: 0;
   width: 100vw;
-  height: 100vh;
-  padding-top: 3.5rem;
-  overflow: scroll;
+  height: calc(100vh - var(--menu-height));
+  padding-top: 0;
+  overflow-y: auto;
 }
 
 .overlay-content {

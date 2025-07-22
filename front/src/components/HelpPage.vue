@@ -60,10 +60,42 @@
 
 <style lang="scss" scoped>
 .cont-modal {
-    background: rgba(255, 255, 255, .4);
+    background: rgba(245, 247, 250, 0.7);
 }
 
 .contenido {
-    background: rgba(255, 255, 255, .8);
+    background: var(--color-superficie, #fff);
+    box-shadow: 0 4px 24px rgba(25, 118, 210, 0.13), 0 1.5px 4px rgba(25, 118, 210, 0.08);
+    border-radius: 1.2rem;
+    padding: 2rem 1.5rem;
+    margin-top: 1.2rem;
+    color: var(--color-texto-principal);
+}
+
+a {
+    color: var(--color-primario);
+    text-decoration: underline dotted;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-acento);
+    text-decoration: underline;
+}
+
+.list-group-item {
+    background: var(--color-superficie, #fff);
+    border: none;
+    color: var(--color-texto-secundario);
+    font-size: 1.05rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.3rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.list-group-item:hover {
+    background: var(--color-primario, #1976D2);
+    color: #fff;
 }
 </style>
