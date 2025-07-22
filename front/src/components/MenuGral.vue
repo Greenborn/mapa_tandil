@@ -39,7 +39,7 @@ const emit  = defineEmits(['btn_click'])
 .cont-gral-menu {
     position: fixed;
     top: 0px;
-    z-index: 1200;
+    z-index: var(--zindex-menu);
     left: 0;
     width: 100vw;
     padding: .75rem;

@@ -56,6 +56,6 @@ function dissmiss(){
 <style lang="scss">
     .cont-toasts{
         position: fixed;
-        z-index: 3000;
+        z-index: var(--zindex-toast);
     }
 </style>

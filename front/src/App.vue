@@ -42,6 +42,9 @@ async function click_menu(enlace) {
   --color-texto-secundario: #757575;
   --color-acento: #FF9800;
   --color-error: #D32F2F;
+  --zindex-menu: 1200;
+  --zindex-modal: 4000;
+  --zindex-toast: 5000;
 }
 body, .container-fluid {
   background: var(--color-fondo);
@@ -50,12 +53,12 @@ body, .container-fluid {
 }
 .cont-modal{
   position: absolute;
-  top: 0px;
-  z-index: 1000;
+  top: 3.5rem;
+  z-index: var(--zindex-modal);
   left: 0;
   width: 100vw;
-  height: 100vh;
-  padding-top: 3.5rem;
+  height: calc(100vh - 3.5rem);
+  padding-top: 0;
   overflow: scroll;
 }
 
