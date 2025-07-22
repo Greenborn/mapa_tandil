@@ -1,6 +1,6 @@
 {
   "name": "mapa_tandil",
-  "version": "0.4.3",
+  "version": "0.5.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
