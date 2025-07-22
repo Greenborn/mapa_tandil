@@ -32,9 +32,13 @@
                     <div class="row justify-content-center border-top">
                         <div class="col-auto p-2">
                             <div class="btn-group btn-group-sm" role="group">
-                                <button type="button" class="btn btn-outline-secondary"
-                                    @click="emit('navigate', { id: 'MAP' })">Cancelar</button>
-                                <button type="button" class="btn btn-outline-primary" @click="enviar">Enviar</button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg px-4"
+                                    @click="emit('navigate', { id: 'MAP' })">
+                                    <i class="bi bi-x-circle me-2"></i>Cancelar
+                                </button>
+                                <button type="button" class="btn btn-primary btn-lg px-4 ms-2" @click="enviar">
+                                    <i class="bi bi-send me-2"></i>Enviar
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -113,9 +117,13 @@ async function enviar() {
     color: var(--color-primario);
     background: var(--color-superficie);
     border: 1.5px solid var(--color-primario);
-    margin: 0 0.2rem;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s;
+    margin: 0 0.4rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.6em 1.4em;
+    border-radius: 2em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
 }
 .btn-group .btn.active, .btn-group .btn:focus, .btn-group .btn:hover {
     background: var(--color-primario);

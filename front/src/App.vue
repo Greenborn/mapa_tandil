@@ -45,6 +45,7 @@ async function click_menu(enlace) {
   --zindex-menu: 1200;
   --zindex-modal: 4000;
   --zindex-toast: 5000;
+  --menu-height: 4.5rem;
 }
 body, .container-fluid {
   background: var(--color-fondo);
@@ -53,13 +54,13 @@ body, .container-fluid {
 }
 .cont-modal{
   position: absolute;
-  top: 3.5rem;
+  top: var(--menu-height);
   z-index: var(--zindex-modal);
   left: 0;
   width: 100vw;
-  height: calc(100vh - 3.5rem);
+  height: calc(100vh - var(--menu-height));
   padding-top: 0;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .overlay-content {
