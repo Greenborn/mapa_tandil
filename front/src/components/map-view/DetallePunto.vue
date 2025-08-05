@@ -44,7 +44,7 @@ function get_images() {
     if (!props.info?.imagenes) return []
     let info = JSON.parse(props.info?.imagenes)
     for (let i = 0; i < info.length; i++) {
-        info[i]['src'] = process.env.VUE_APP_API_URL + info[i]?.id + info[i]?.extension
+        info[i]['src'] = import.meta.env.VITE_API_URL + info[i]?.id + info[i]?.extension
     }
     return info
 }

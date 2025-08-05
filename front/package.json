@@ -3,8 +3,9 @@
   "version": "0.5.3",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --prod && zip -r build.zip dist"
+    "dev": "vite",
+    "build": "vite build && zip -r build.zip dist",
+    "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -19,9 +20,9 @@
     "vue3-openlayers": "^11.2.1"
   },
   "devDependencies": {
-    "@vue/cli-service": "~5.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
     "sass": "^1.89.2",
-    "sass-loader": "^16.0.5"
+    "vite": "^6.0.0"
   },
   "eslintConfig": {
     "root": true,

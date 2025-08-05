@@ -1,5 +1,5 @@
 import create from '../helpers/request'
-const request = create(process.env.VUE_APP_API_URL, false)
+const request = create(import.meta.env.VITE_API_URL, false)
 
 export function get_reclamo(id) {
     return request({ url: '/reclamo?id=' + id, method: 'get' })
